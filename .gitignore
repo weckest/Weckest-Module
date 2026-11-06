@@ -1,0 +1,67 @@
+
+# ==============================
+# PlatformIO
+# ==============================
+.pio/
+.pioenvs/
+.piolibdeps/
+
+# ==============================
+# Python virtual environments
+# ==============================
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ==============================
+# IDEs
+# ==============================
+.idea/
+.vs/
+
+# VS Code
+.vscode/*
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/tasks.json
+
+# ==============================
+# Operating systems
+# ==============================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ==============================
+# Generated build files
+# ==============================
+compile_commands.json
+*.o
+*.obj
+*.elf
+*.map
+*.out
+*.a
+*.lib
+
+# Firmware binaries
+firmware-esp32.bin
+
+# ==============================
+# Debugging
+# ==============================
+*.log
+*.dmp
+
+# ==============================
+# Temporary files
+# ==============================
+*.tmp
+*.bak
+*.swp
+*~
