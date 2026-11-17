@@ -30,6 +30,8 @@ private:
 
     bool sendAll(const uint8_t *buffer, size_t size);
 
+    bool sendIdentification();
+
     unsigned long lastHeartbeat;
 
     WiFiClient client;

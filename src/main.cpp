@@ -46,6 +46,7 @@ void setup()
 
     Serial.print("ESP32 IP: ");
     Serial.println(WiFi.localIP());
+    Serial.println(WiFi.macAddress());
 
     connection.connect();
 }

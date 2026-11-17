@@ -249,6 +249,38 @@ bool TcpConnection::sendAll(const uint8_t *buffer, size_t size)
     return true;
 }
 
+bool TcpConnection::sendIdentification()
+{
+    ModuleMessage message =
+        ModuleMessage_init_zero;
+
+    // Retrieve the ESP32's actual MAC address.
+    String macAddress = WiFi.macAddress();
+
+    // Set the identification message.
+    message.which_payload =
+        ModuleMessage_setup_request_tag;
+
+    strncpy(
+        message.payload.setup_request.mac_address,
+        macAddress.c_str(),
+        sizeof(message.payload.setup_request.mac_address) - 1
+    );
+
+    Serial.print("Sending module identification: ");
+    Serial.println(macAddress);
+
+    if (!sendMessage(message))
+    {
+        Serial.println("Failed to send module identification");
+        return false;
+    }
+
+    Serial.println("Module identification sent!");
+
+    return true;
+}
+
 bool TcpConnection::receiveAll(uint8_t *buffer, size_t size)
 {
     size_t totalReceived = 0;
